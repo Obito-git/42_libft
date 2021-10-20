@@ -2,6 +2,5 @@
 
 int ft_isalnum(int c)
 {
-	c = 0;
-	return c;
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
