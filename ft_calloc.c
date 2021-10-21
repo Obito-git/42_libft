@@ -2,5 +2,11 @@
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
-	return (malloc(nmemb * size));
+	void *mem;
+
+	mem = malloc(nmemb * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, nmemb * size);
+	return (mem);
 }

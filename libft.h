@@ -34,31 +34,18 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 /*<stdlib.h>*/
-int		ft_atoi(char *str);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 
 
-
-
-
+////////////////////////////// PART 2 //////////////////////////////////////
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char *ft_strtrim(char const *s1, char const *set);
 
 
 
 
 /*//////////////////////////// BONUS ////////////////////////////////// */
-/*<string.h>*/
-char	*ft_strcpy(char	*dest, const char	*src);
-char	*ft_strncpy(char	*dest,	char	*src,	unsigned int	n);
-char	*ft_strcat(char	*dest, char	*src);
-char	*ft_strncat(char	*dest, char	*src, unsigned int nb);
-char	*ft_strstr(const char	*str, const char	*to_find);
-int		ft_strcmp(char	*s1, char	*s2);
-/*<stdio.h>*/
-void	ft_putchar(char c);
-/*<42 ecole>*/
-void	ft_putstr(char const *s);
-void	ft_putnbr(int	n);
-
 
 #endif

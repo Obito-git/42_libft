@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/09 15:59:23 by amyroshn          #+#    #+#             */
-/*   Updated: 2021/08/10 08:59:37 by amyroshn         ###   ########.fr       */
+/*   Created: 2021/08/16 13:06:44 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/08/19 11:18:17 by amyroshn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strcat(char	*dest, char	*src)
+static char	*ft_strcat(char	*dest, const char	*src)
 {
-	int	dest_len;
-	unsigned int	i;
+	size_t	dest_len;
+	size_t	i;
 
 	i = 0;
 	dest_len = ft_strlen(dest);
@@ -26,4 +26,17 @@ char	*ft_strcat(char	*dest, char	*src)
 	}
 	dest[dest_len] = '\0';
 	return (dest);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*res;
+	
+	res = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!res)
+		return (NULL);
+	res[0] = 0;
+	ft_strcat(res, s1);
+	ft_strcat(res, s2);
+	return (res);
 }

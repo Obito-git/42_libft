@@ -1,12 +1,13 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRCS = ft_bzero.c    ft_isprint.c  ft_memmove.c  ft_strcat.c  ft_strlcat.c  ft_strncpy.c  ft_toupper.c \
+SRCS = ft_bzero.c    ft_isprint.c  ft_memmove.c  ft_strlcat.c  ft_toupper.c \
 ft_calloc.c   ft_memccpy.c  ft_memset.c   ft_strchr.c  ft_strlcpy.c  ft_strnstr.c  \
-ft_isalnum.c  ft_memchr.c   ft_putchar.c  ft_strcmp.c  ft_strlen.c   ft_strrchr.c  \
-ft_isascii.c  ft_memcmp.c   ft_putnbr.c   ft_strcpy.c  ft_strncat.c  ft_strstr.c	\
-ft_isdigit.c  ft_memcpy.c   ft_putstr.c   ft_strdup.c  ft_strncmp.c  ft_tolower.c	\
-ft_isalpha.c
+ft_isalnum.c  ft_memchr.c   ft_strlen.c   ft_strrchr.c  \
+ft_isascii.c  ft_memcmp.c   \
+ft_isdigit.c  ft_memcpy.c   ft_strdup.c  ft_strncmp.c  ft_tolower.c	\
+ft_isalpha.c  \
+ft_substr.c ft_strjoin.c ft_strtrim.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -21,6 +22,8 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS)
 	rm -f .*.swp
+	rm -f *.so
+	rm -f a.out
 
 fclean: clean
 	rm -f $(NAME)
