@@ -20,10 +20,10 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 size_t	ft_strlen(const char *str);
-int		ft_strncmp(char	*s1, char	*s2, unsigned int	n);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int	n);
 /*<bsd/string.h>*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-size_t	ft_strlcat(char	*dest, char	*src, size_t	size);
+size_t	ft_strlcat(char	*dest, const char	*src, size_t	size);
 char	*ft_strnstr(const char	*str, const char	*to_find, size_t len);
 /* <ctype.h> */
 int		ft_isalpha(int c);
@@ -48,6 +48,7 @@ void ft_putchar_fd(char c, int fd);
 void ft_putstr_fd(char *s, int fd);
 void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 /*//////////////////////////// BONUS ////////////////////////////////// */
 

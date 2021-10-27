@@ -1,32 +1,31 @@
 #include "libft.h"
 
-int		ft_get_lines_count(const char *str, char c)
+static size_t get_str_count(char const *str, char delim)
 {
-	int	i;
-	int	lc;
+	size_t	count;
+	size_t	i;
 
-	if (!str)
-		return (0);
+	count = 0;
 	i = 0;
-	lc = 0;
+
 	while (str[i])
 	{
-		while(str[i] && str[i] == c)
+		while (str[i] && str[i] == delim)
 			i++;
 		if (str[i] != '\0')
-			lc++;
-		while(str[i] && str[i] != c)
+			count++;
+		while (str[i] && str[i] != delim)
 			i++;
 	}
-	return (lc);
+	return count;
 }
 
-int	line_strt(const char *str, int *index, char c)
+static size_t get_len(char const *str, char delim)
 {
-	int	i = 0;
-	while (str[*index] && str[*index] == c)
-		*index += 1;
-	while (str[*index + i] && str[*index + i] != c)
+	size_t	i;
+
+	i = 0;
+	while (str[i] && str[i] != delim)
 		i++;
 	return (i);
 }
@@ -34,36 +33,28 @@ int	line_strt(const char *str, int *index, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	char	*temp;
-	int i;
-	int y;
-	int	index;
+	size_t	y;
+	size_t	i;
 
 	i = 0;
-	index = 0;
-	res = (char **) malloc((ft_get_lines_count(s, c) + 1) * sizeof(char*));
-	if (!res || !s)
+	y = 0;
+	if (!s)
 		return (NULL);
-	while (i < ft_get_lines_count(s,c))
+	res = (char **) malloc((get_str_count(s, c) + 1) * sizeof(char *));
+	if (!res)
+		return (NULL);
+	while (s[i])
 	{
-		temp = (char *) malloc((line_strt(s, &index, c)  + 1) * sizeof(char));
-		y = 0;
-		while (c != s[index])
-			temp[y++] = s[index++];
-		temp[y] = 0;
-		res[i] = temp;
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
+			res[y] = (char *) malloc(get_len(&s[i], c) + 1);
+			ft_strlcpy(res[y], &s[i], get_len(&s[i], c) + 1);
+			y++;
+			i += get_len(&s[i], c);
+		}	
 	}
-	res[i] = NULL;
+	res[y] = NULL;
 	return (res);
 }
-/*
-int main()
-{
-	char *test = NULL;
-	char **res;
-	res = ft_split(test, 0);
-	int i = 0;
-	while(res[i])
-		printf("%s\n", res[i]);
-}*/

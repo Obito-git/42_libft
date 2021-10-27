@@ -5,9 +5,9 @@ char *ft_strchr(const char *str, int c)
 	size_t	i;
 
 	i = 0;
-	while (str[i] && str[i] != c)
+	while (str[i] && (unsigned char) str[i] != (unsigned char) c)
 		i++;
-	if (str[i] == c)
+	if ((unsigned char) str[i] == (unsigned char) c)
 		return ((char *) &str[i]);
 	return (NULL);
 }
