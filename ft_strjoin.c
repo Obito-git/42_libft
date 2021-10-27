@@ -31,7 +31,9 @@ static char	*ft_strcat(char	*dest, const char	*src)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
-	
+
+	if (!s1 || !s2)
+			return (ft_strdup(""));	
 	res = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 		return (NULL);
