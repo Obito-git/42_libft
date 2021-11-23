@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:51:04 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/11/23 11:51:36 by amyroshn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static size_t get_str_count(char const *str, char delim)
+static size_t	get_str_count(char const *str, char delim)
 {
 	size_t	count;
 	size_t	i;
 
 	count = 0;
 	i = 0;
-
 	while (str[i])
 	{
 		while (str[i] && str[i] == delim)
@@ -17,10 +28,10 @@ static size_t get_str_count(char const *str, char delim)
 		while (str[i] && str[i] != delim)
 			i++;
 	}
-	return count;
+	return (count);
 }
 
-static size_t get_len(char const *str, char delim)
+static size_t	get_len(char const *str, char delim)
 {
 	size_t	i;
 

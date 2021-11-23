@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:52:03 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/11/23 11:52:28 by amyroshn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	*ft_strcpy(char	*dest, const char	*src)
@@ -52,9 +64,9 @@ static int	check_negative(char *str, int *last_index, int *n)
 
 char	*ft_itoa(int n)
 {
-	int	numb_size;
+	int		numb_size;
 	char	*res;
-	int	last_index;
+	int		last_index;
 
 	numb_size = get_numblen(n);
 	last_index = 0;

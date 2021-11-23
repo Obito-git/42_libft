@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:44:48 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/11/23 11:47:23 by amyroshn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-static size_t get_start(char const *s1, char const *set)
+
+static size_t	get_start(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	y;
@@ -11,13 +24,13 @@ static size_t get_start(char const *s1, char const *set)
 		while (set[y] && s1[start] != set[y])
 			y++;
 		if (set[y] == '\0')
-			return start;
+			return (start);
 		start++;
 	}
-	return start;
+	return (start);
 }
 
-static size_t get_end(char const *s1, char const *set)
+static size_t	get_end(char const *s1, char const *set)
 {
 	size_t	end;
 	size_t	y;
@@ -29,13 +42,13 @@ static size_t get_end(char const *s1, char const *set)
 		while (set[y] && s1[end] != set[y])
 			y++;
 		if (set[y] == '\0')
-			return end;
+			return (end);
 		end--;
 	}
-	return end;
+	return (end);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 	size_t	start;
