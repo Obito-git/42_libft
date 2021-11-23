@@ -2,7 +2,7 @@
 #define LIBFT_H
 
 #include <unistd.h>
-#include <bsd/string.h> //FIXME
+//#include <bsd/string.h> //FIXME
 #include <stdlib.h>
 #include <stdio.h> //FIXME
 

@@ -5,7 +5,8 @@ int ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
-	else if (c < -1)
-		return (c + 256);
+//  linux fix
+//	else if (c < -1)
+//		return (c + 256);
 	return (c);
 }
