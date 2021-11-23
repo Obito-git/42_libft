@@ -1,8 +1,19 @@
-#ifndef LIBFT_H
-#define LIBFT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:02:42 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/11/23 11:03:06 by amyroshn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef	LIBFT_H
+#define	LIBFT_H
 
 #include <unistd.h>
-//#include <bsd/string.h> //FIXME
 #include <stdlib.h>
 #include <stdio.h> //FIXME
 
@@ -27,10 +38,12 @@ char	*ft_strrchr(const char *str, int c);
 char	*ft_strdup(const char *src);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int	n);
+
 /*<bsd/string.h>*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char	*dest, const char	*src, size_t	size);
 char	*ft_strnstr(const char	*str, const char	*to_find, size_t len);
+
 /* <ctype.h> */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

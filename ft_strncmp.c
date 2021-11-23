@@ -6,12 +6,12 @@
 /*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 15:51:28 by amyroshn          #+#    #+#             */
-/*   Updated: 2021/08/16 14:52:17 by amyroshn         ###   ########.fr       */
+/*   Updated: 2021/11/23 11:11:30 by amyroshn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int	n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:25:26 by amyroshn          #+#    #+#             */
+/*   Updated: 2021/11/23 11:27:53 by amyroshn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_isspace(char c)
 {
-	return (c == '\f' || c == '\t' || c == ' ' ||
-			c == '\n' || c == '\r' || c == '\v');
+	return (c == '\f' || c == '\t' || c == ' '
+		|| c == '\n' || c == '\r' || c == '\v');
 }
 
 static int	get_int_len(const char *s)
@@ -34,7 +46,7 @@ static int	iscorrect_format(const char *s, size_t *i, int *sign)
 	return (1);
 }
 
-int ft_atoi(const char *s)
+int	ft_atoi(const char *s)
 {
 	size_t	i;
 	int		sign;
@@ -43,8 +55,8 @@ int ft_atoi(const char *s)
 	int		temp;
 
 	res = 0;
-	if (!iscorrect_format(s, &i, &sign) ||
-		(get_int_len(&s[i]) > 10 && sign == -1))
+	if (!iscorrect_format(s, &i, &sign)
+		|| (get_int_len(&s[i]) > 10 && sign == -1))
 		return (0);
 	if (get_int_len(&s[i]) > 10 && sign == 1)
 		return (-1);
@@ -55,15 +67,10 @@ int ft_atoi(const char *s)
 		while (y++ < get_int_len(&s[i]))
 			temp *= 10;
 		res += temp * (s[i] - '0');
-		if ((sign == -1 && res > 2147483648) ||
-				(sign == 1 && res > 2147483647))
+		if ((sign == -1 && res > 2147483648)
+			|| (sign == 1 && res > 2147483647))
 			return (0);
 		i++;
 	}
-	return ((int) (res * sign));
+	return ((int)(res * sign));
 }	
-/*
-int main(int ac, char **av)
-{
-	printf("%d\n", ft_atoi(av[1]));
-}*/
