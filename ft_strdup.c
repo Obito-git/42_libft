@@ -6,7 +6,7 @@
 /*   By: amyroshn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 11:17:36 by amyroshn          #+#    #+#             */
-/*   Updated: 2021/08/19 12:33:41 by amyroshn         ###   ########.fr       */
+/*   Updated: 2021/11/24 09:06:00 by amyroshn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,7 +24,6 @@ static char	*ft_strcpy(char	*dest, const char	*src)
 	dest[i] = '\0';
 	return (dest);
 }
-
 
 char	*ft_strdup(const char	*src)
 {
